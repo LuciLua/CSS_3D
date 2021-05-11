@@ -12,7 +12,6 @@
 .btns:hover .btn-u, .btns:hover .btn-u-2{
     transition: 2s;
     letter-spacing: 2px;
-    filter: opacity(80%);
 }
 
 
@@ -24,6 +23,9 @@ body{
     padding: 0;
 }
 
+.dark{
+    background-color: #1e2029;
+}
 
 .box{
     margin-top: 10vh;
@@ -35,7 +37,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     box-shadow: rgba(0, 0, 0, 0.453) 0px 0px 8px;
-    background-color: rgba(255, 255, 255, 0.256);
+    background-color: rgba(255, 255, 255, 0.091);
     backdrop-filter: blur(2px);
     border-radius: 7px;
     position: relative;
@@ -43,8 +45,7 @@ body{
 
 .title{
     position: relative;
-    border: 1px solid transparent;
-    background-color: rgb(72, 72, 72);
+    background-color: rgb(64, 100, 109);
     width: 150px;
     height: 150px;
     border-radius: 60%;
@@ -52,58 +53,30 @@ body{
     margin-left: auto;
     margin-right: auto;
     top: 25%;
-    background-image: url(https://scontent.fjdf2-1.fna.fbcdn.net/v/t1.0-9/72237834_2948923281999004_8017416353386332160_o.jpg?_nc_cat=106&ccb=1-3&_nc_sid=174925&_nc_ohc=NsaoELcFr2MAX_nx7BA&_nc_ht=scontent.fjdf2-1.fna&oh=853f40f89f239d736ef60be3a491412f&oe=606C786B);
-    background-size: 100%; 
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
 
-
-.infos{
-    border: transparent 1px solid;
-    width: 40%;
-    height: 35px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    top: 30%;
-    position: relative;
-    background-color: transparent;
-    display: inline-flex;
+.title .head{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 100%;
 }
 
-.ico{
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    width: 25%;
-    height: 100%;
-    max-height: 100%;
-
-}
-
-#ico-1{
-    background-image: url(/img/github.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    transition: 1s;
-}
-
-#ico-2{
-    background-image: url(/img/linkedin.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    transition: 1s;
-
-}
-
-#ico-3{
-    background-image: url(/img/youtube.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    transition: 1s;
-
+.title .body{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: 70%;
 }
 
 .btn-u{
@@ -152,7 +125,7 @@ body{
     height: 20px;
     text-align: center;
     margin: 10px;
-    border: 1px solid #373737;
+    border: 1px solid #ffffff;
     border-radius: 40px;
     background-color: #373737;
     color: rgb(255, 255, 255);
@@ -175,6 +148,7 @@ body{
 }
 
 .header{
+    background-color: rgba(255, 255, 255, 0.057);
     width: 100%;
     padding: 0;
     margin: 0;
@@ -204,4 +178,92 @@ body{
 .header ul{
     margin: 0;
     list-style-type: none;
+}
+
+
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.obj{
+    background-color: aqua;
+
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+
+    animation: 5s qua ease infinite;
+
+    border: aqua 3px solid;
+    border-radius: 20px;
+    box-shadow: 0 -4px 63px rgba(0, 255, 255, 0.359);
+    user-select: none;
+
+    
+
+}
+
+@keyframes qua{
+    0%,100%{
+        transform: perspective(1em) rotateY(0.5deg); 
+    }
+
+    25%{
+    transform: perspective(1em) rotateY(-0.5deg); 
+    }
+}
+
+.obj p{
+    position: absolute;
+    z-index: 3;
+    top: 40%;
+    left: 30%;
+    font-family: Arial;
+    font-weight: 700;
+    color: rgb(45, 45, 45);
+    user-select: none;
+}
+
+
+.obj::before{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    background-color: aqua;
+
+    opacity: 30%;
+    
+    left: 0;
+    top: 50%;
+    
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.12);
+
+    filter: blur(90px);
+
+    z-index: 0;
+}
+
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 2px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: aqua;
 }
